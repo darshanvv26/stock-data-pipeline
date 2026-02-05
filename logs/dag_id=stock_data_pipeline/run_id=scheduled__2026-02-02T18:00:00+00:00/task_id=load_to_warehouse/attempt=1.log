@@ -1,0 +1,15 @@
+[2026-02-03T19:32:03.198+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_data_pipeline.load_to_warehouse scheduled__2026-02-02T18:00:00+00:00 [queued]>
+[2026-02-03T19:32:03.204+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_data_pipeline.load_to_warehouse scheduled__2026-02-02T18:00:00+00:00 [queued]>
+[2026-02-03T19:32:03.204+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 3
+[2026-02-03T19:32:03.213+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): load_to_warehouse> on 2026-02-02 18:00:00+00:00
+[2026-02-03T19:32:03.218+0000] {standard_task_runner.py:57} INFO - Started process 197 to run task
+[2026-02-03T19:32:03.220+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'stock_data_pipeline', 'load_to_warehouse', 'scheduled__2026-02-02T18:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/stock_pipeline_dag.py', '--cfg-path', '/tmp/tmp_itxzlbm']
+[2026-02-03T19:32:03.221+0000] {standard_task_runner.py:85} INFO - Job 7: Subtask load_to_warehouse
+[2026-02-03T19:32:03.259+0000] {task_command.py:416} INFO - Running <TaskInstance: stock_data_pipeline.load_to_warehouse scheduled__2026-02-02T18:00:00+00:00 [running]> on host 3e6d57f63b6a
+[2026-02-03T19:32:03.316+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineering' AIRFLOW_CTX_DAG_ID='stock_data_pipeline' AIRFLOW_CTX_TASK_ID='load_to_warehouse' AIRFLOW_CTX_EXECUTION_DATE='2026-02-02T18:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-02T18:00:00+00:00'
+[2026-02-03T19:32:03.318+0000] {minio_client.py:64} INFO - MinIO client initialized for endpoint: minio:9000
+[2026-02-03T19:32:03.321+0000] {minio_client.py:232} INFO - Listed 0 objects in gold/kpis/daily/
+[2026-02-03T19:32:03.321+0000] {python.py:194} INFO - Done. Returned value was: {'status': 'success', 'files_processed': 0, 'rows_inserted': 0}
+[2026-02-03T19:32:03.339+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=stock_data_pipeline, task_id=load_to_warehouse, execution_date=20260202T180000, start_date=20260203T193203, end_date=20260203T193203
+[2026-02-03T19:32:03.352+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2026-02-03T19:32:03.366+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

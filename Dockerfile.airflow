@@ -1,0 +1,11 @@
+FROM apache/airflow:2.7.3-python3.10
+
+USER airflow
+
+# Install Python packages (all are pre-compiled wheels, no build tools needed)
+RUN pip install --no-cache-dir \
+    minio \
+    pandas \
+    pyarrow \
+    requests \
+    psycopg2-binary
