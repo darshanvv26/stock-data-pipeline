@@ -7,7 +7,7 @@ End-to-end data pipeline for stock market analysis using **Medallion Architectur
 ```
 ┌─────────────────┐     ┌─────────────────────────────────────────┐     ┌──────────────┐
 │  Alpha Vantage  │────▶│            MinIO Data Lake              │────▶│  PostgreSQL  │
-│      API        │     │  Bronze → Silver → Gold (Medallion)    │     │  Warehouse   │
+│      API        │     │  Bronze → Silver → Gold (Medallion)     │     │  Warehouse   │
 └─────────────────┘     └─────────────────────────────────────────┘     └──────────────┘
                                          │                                      │
                                          │        ┌─────────────────┐           │
@@ -15,7 +15,7 @@ End-to-end data pipeline for stock market analysis using **Medallion Architectur
                                                   │    Dashboard    │
                                                   └─────────────────┘
                         ┌─────────────────────────────────────────────────────────────┐
-                        │                   Apache Airflow                             │
+                        │                   Apache Airflow                            │
                         │    (fetch_data → transform_silver → calculate_kpis → load)  │
                         └─────────────────────────────────────────────────────────────┘
 ```
