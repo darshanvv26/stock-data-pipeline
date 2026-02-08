@@ -2,7 +2,7 @@
 
 End-to-end data pipeline for stock market analysis using **Medallion Architecture** with MinIO data lake, Apache Airflow orchestration, PostgreSQL data warehouse, and Streamlit dashboard.
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────┐     ┌─────────────────────────────────────────┐     ┌──────────────┐
@@ -20,7 +20,7 @@ End-to-end data pipeline for stock market analysis using **Medallion Architectur
                         └─────────────────────────────────────────────────────────────┘
 ```
 
-## 📦 Components
+## Components
 
 | Component | Technology | Description |
 |-----------|------------|-------------|
@@ -32,7 +32,7 @@ End-to-end data pipeline for stock market analysis using **Medallion Architectur
 | **Orchestration** | Apache Airflow | DAG-based pipeline scheduling |
 | **Dashboard** | Streamlit | Interactive visualization |
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -82,7 +82,7 @@ docker-compose ps
 1. **MinIO Console**: Check bronze/silver/gold buckets for data files
 2. **Dashboard**: View stock charts and KPIs at [http://localhost:8501](http://localhost:8501)
 
-## 📊 Medallion Architecture
+## Medallion Architecture
 
 ### Bronze Layer (Raw Data)
 - Location: `bronze/stocks/{symbol}/{date}.json`
@@ -103,7 +103,7 @@ docker-compose ps
   - **RSI**: 14-period Relative Strength Index
   - **Volume Trends**: Average volume over periods
 
-## 📈 KPIs Calculated
+## KPIs Calculated
 
 | KPI | Description |
 |-----|-------------|
@@ -116,7 +116,7 @@ docker-compose ps
 | `avg_volume_7d` / `avg_volume_30d` | Average trading volume |
 | `price_range` | Daily high-low spread |
 
-## 🔧 Configuration
+## Configuration
 
 ### Stock Symbols
 
@@ -134,7 +134,7 @@ Default schedule: Daily at 6 PM UTC (Mon-Fri, after market close)
 schedule_interval='0 18 * * 1-5'
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 stock-data-pipeline/
@@ -159,7 +159,7 @@ stock-data-pipeline/
     └── init_db.sql           # Database initialization
 ```
 
-## 🛠️ Development
+## Development
 
 ### Local Testing
 
@@ -184,7 +184,7 @@ docker-compose build --no-cache
 docker-compose up -d
 ```
 
-## 🔍 Troubleshooting
+## Troubleshooting
 
 ### No Data in Dashboard
 1. Check if DAG ran successfully in Airflow
@@ -204,7 +204,3 @@ docker logs postgres
 # Connect directly
 docker exec -it postgres psql -U airflow -d stockdb
 ```
-
-## 📝 License
-
-MIT License
